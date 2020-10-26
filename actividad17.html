@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Actividad 17</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <!-- Encabezado -->
+                <div class="jumbotron">
+                    <h1 class="display-4">{{titulo}}</h1>
+                    <h5>{{alumno}} - {{matricula}}</h5>
+                    <ul>
+                        <li v-for="instruccion in instrucciones">
+                            {{instruccion}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/focoOn.png" v-if="focoEncendido">
+                        <img src="images/focoOff.png" v-if="!focoEncendido">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-dark btn-block" v-if="focoEncendido" @click="focoEncendido = false">
+                            Apagar foco
+                        </button>
+                        <button class="btn btn-warning btn-block" v-if="!focoEncendido" @click="focoEncendido = true">
+                            Encender foco
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
